@@ -16,7 +16,7 @@ services:
     environment:
       PORT: 5000
       JWT_TOKEN_KEY: xV+PNRr+p+YI2o77
-      MONGODB_URL: mongodb+srv://mehra3228:Himanshu@2712@social-db.2kqbqeb.mongodb.net/test
+      MONGODB_URL: mongodb+srv://mehra3228:Himanshu%402712@social-db.2kqbqeb.mongodb.net/socailData?retryWrites=true&w=majority
     depends_on:
       - mongo_db
 
