@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+    ports:
+    - '27016:27017'
+  api:
+    build: .
+    ports:
+      - 5000:5000
+    environment:
+      PORT: 5000
+      JWT_TOKEN_KEY: xV+PNRr+p+YI2o77
+      MONGODB_URL: mongodb+srv://mehra3228:Himanshu@2712@social-db.2kqbqeb.mongodb.net/test
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_db : {}
